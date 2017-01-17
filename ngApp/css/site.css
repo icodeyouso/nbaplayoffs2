@@ -1,0 +1,17 @@
+body {
+  font-family: 'Graduate', cursive;
+}
+
+body,
+md-content {
+  background-color: #f5f5f5 !important;
+}
+
+
+body > md-toolbar {
+  z-index: 3;
+}
+
+md-card:first-child {
+  padding: 8px 8px 8px 24px;
+}
