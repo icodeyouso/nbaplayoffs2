@@ -1,57 +1,29 @@
 <h2></h2>
 <p>
-    {{controller.message}}
+  {{controller.message}}
 </p>
 <md-content layout="column">
-      <!--<md-card>
+  <!--<md-card>
         <div layout="row">
         </div>
         </md-card>-->
   <md-card>
-  <md-toolbar class="md-table-toolbar md-default">
-    <div class="md-toolbar-tools">
-      <span>nba playoffs</span>
-      <div flex></div>
-      
-    </div>
-  </md-toolbar>
-   <md-table-container ng-repeat="series in controller.nbaseries">
-          <table md-table>
-            <thead  md-head>
-              <tr md-row>
-                <th md-column><span></span><img src="http://ftpmirror.your.org/pub/wikimedia/images/wikipedia/en/8/83/1990NBAFinals.png" alt="HTML5 Icon" width="100" height="100"</span>
-                </th>
-
-                <th md-column><span></span></th>
-                <th md-column><span>Coach</span></th>
-                <th md-column><span>MVP</span></th>
-                <th md-column><span>All-Star</span></th>
-                <th md-column><span>Record</span></th>
-                <th md-column><span>Rank</span></th>
-                </th>
-              </tr>
-            </thead>
-             <tbody md-body>
-              <tr md-row ng-repeat="game in series.games">
-                
- 
-                <td md-cell>{{game._id}}</td>
-                <td md-cell>{{game.homeTeam.name}}</td>
-                <td md-cell><img ng-src="{{game.homeTeam.logo}}" alt="HTML5 Icon" width="100" height="100"></td>
-                <td md-cell>{{game.homeTeam.homeScore}}</td>
-                <td md-cell><img ng-src="{{game.awayTeam.logo}}" alt="HTML5 Icon" width="100" height="100"></td><!--<td md-cell></td>
-                <td md-cell>{{game.homeTeam.logo}}</td>
-                <td md-cell></td>
-                <td md-cell></td>
-                <td md-cell hide-gt-xs show-gt-lg></td>
-                <td md-cell hide-gt-xs show-gt-lg></td>
-                -->
-              </tr>
-            </tbody>
-          </table>
-        </md-table-container>
-        </md-card>
-        </md-content>
-
-       
- 
+    <md-toolbar class="md-table-toolbar md-default">
+      <div class="md-toolbar-tools">
+      <div flex="25">home</div>
+      <div flex="25">score</div>
+      <div flex="25">away</div>
+      <div flex="25">score</div>
+      </div>
+    </md-toolbar>
+    <md-content ng-repeat="series in controller.nbaseries">
+      <div layout="row" ng-repeat="game in series.games">
+        <div flex="25"><img ng-src="{{game.homeTeam.logo}}" style="max-width:100px;"></div>
+        <div flex="25">{{game.homeScore}}</div>
+        <div flex="25"><img ng-src="{{game.awayTeam.logo}}" style="max-width:100px;"></div>
+        <div flex="25">{{game.awayScore}}</div>
+        <!--<md-button flex="20" class="md-raised md-accent">v   <md-button flex="20" class="md-raised md-accent">view</md-button>-->
+      </div>
+    </md-content>
+  </md-card>
+</md-content>
